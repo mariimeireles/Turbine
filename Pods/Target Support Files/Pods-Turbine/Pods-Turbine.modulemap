@@ -1,0 +1,6 @@
+framework module Pods_Turbine {
+  umbrella header "Pods-Turbine-umbrella.h"
+
+  export *
+  module * { export * }
+}
