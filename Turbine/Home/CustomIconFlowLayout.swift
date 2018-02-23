@@ -22,17 +22,19 @@ class CustomIconFlowLayout: UICollectionViewFlowLayout {
     
     override var itemSize: CGSize {
         set{}
-        
+
         get{
             let numberOfColumns: CGFloat = 2
-            let iconWidth = (self.collectionView!.frame.width - 36) / numberOfColumns
+            let number = minimumInteritemSpacing + 82
+            let iconWidth = (self.collectionView!.frame.width - number) / numberOfColumns
             return CGSize(width: iconWidth, height: iconWidth)
         }
     }
     
     func setupLayout() {
-        minimumInteritemSpacing = 36
-        minimumLineSpacing = 36
+        minimumInteritemSpacing = 31
+        minimumLineSpacing = 31
+        sectionInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
     }
     
     

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		49BE6AFC2038A7D10027FD46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */; };
-		49BE6AFE2038A7D10027FD46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6AFD2038A7D10027FD46 /* ViewController.swift */; };
 		49BE6B012038A7D10027FD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BE6AFF2038A7D10027FD46 /* Main.storyboard */; };
 		49BE6B032038A7D10027FD46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BE6B022038A7D10027FD46 /* Assets.xcassets */; };
 		49BE6B062038A7D10027FD46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BE6B042038A7D10027FD46 /* LaunchScreen.storyboard */; };
@@ -32,6 +31,8 @@
 		49BE6B312039D9730027FD46 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */; };
 		49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */; };
 		49BE6B35203A2B590027FD46 /* HomeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B34203A2B590027FD46 /* HomeFooterView.swift */; };
+		4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */; };
+		4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */; };
 		CEF47C14175EA6348319346C /* Pods_Turbine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +40,6 @@
 		30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turbine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BE6AF82038A7D10027FD46 /* Turbine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turbine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49BE6AFD2038A7D10027FD46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49BE6B002038A7D10027FD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49BE6B022038A7D10027FD46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49BE6B052038A7D10027FD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +64,8 @@
 		49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIconFlowLayout.swift; sourceTree = "<group>"; };
 		49BE6B34203A2B590027FD46 /* HomeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterView.swift; sourceTree = "<group>"; };
+		4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9EC5D70E7E38F2835BF30409 /* Pods-Turbine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turbine/Pods-Turbine.release.xcconfig"; sourceTree = "<group>"; };
 		FEC69E9BE30BEFC60EA61C11 /* Pods-Turbine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Turbine/Pods-Turbine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,10 +114,7 @@
 				49BE6B0F2038BAE10027FD46 /* Fonts */,
 				49BE6B0D2038A87B0027FD46 /* GoogleService-Info.plist */,
 				49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */,
-				49BE6AFD2038A7D10027FD46 /* ViewController.swift */,
-				49BE6B34203A2B590027FD46 /* HomeFooterView.swift */,
-				49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */,
-				49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */,
+				4D2AC137204099D000F5F330 /* Home */,
 				49BE6AFF2038A7D10027FD46 /* Main.storyboard */,
 				49BE6B022038A7D10027FD46 /* Assets.xcassets */,
 				49BE6B042038A7D10027FD46 /* LaunchScreen.storyboard */,
@@ -145,6 +144,18 @@
 				49BE6B152038BB1B0027FD46 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4D2AC137204099D000F5F330 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */,
+				4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */,
+				49BE6B34203A2B590027FD46 /* HomeFooterView.swift */,
+				49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */,
+				49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A9E9363D7FD000DF656B3D7D /* Pods */ = {
@@ -306,11 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49BE6AFE2038A7D10027FD46 /* ViewController.swift in Sources */,
 				49BE6AFC2038A7D10027FD46 /* AppDelegate.swift in Sources */,
 				49BE6B35203A2B590027FD46 /* HomeFooterView.swift in Sources */,
 				49BE6B312039D9730027FD46 /* IconCollectionViewCell.swift in Sources */,
+				4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */,
 				49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */,
+				4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

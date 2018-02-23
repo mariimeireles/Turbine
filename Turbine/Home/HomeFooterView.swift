@@ -10,4 +10,5 @@ import UIKit
 
 class HomeFooterView: UICollectionReusableView {
         
+    @IBOutlet weak var referencesButton: UIButton!
 }
