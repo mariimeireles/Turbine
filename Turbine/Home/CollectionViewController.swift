@@ -17,11 +17,26 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCustomNavigationButton()
         customIconFlowLayout = CustomIconFlowLayout()
         self.collectionView!.collectionViewLayout = customIconFlowLayout
         customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
         customIconFlowLayout.footerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
         loadImages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    func setCustomNavigationButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func loadImages() {
