@@ -12,12 +12,12 @@ private let reuseIdentifier = "Icon"
 
 class CollectionViewController: UICollectionViewController {
     
-    var customIconFlowLayout: CustomIconFlowLayout!
-    var images = [UIImage]()
+    private var customIconFlowLayout: CustomIconFlowLayout!
+    private var images = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCustomNavigationButton()
+        setCustomNavigationBar()
         customIconFlowLayout = CustomIconFlowLayout()
         self.collectionView!.collectionViewLayout = customIconFlowLayout
         customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
@@ -35,11 +35,12 @@ class CollectionViewController: UICollectionViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    func setCustomNavigationButton() {
+    private func setCustomNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    func loadImages() {
+    private func loadImages() {
         images.append(UIImage(named: "Image1")!)
         images.append(UIImage(named: "Image1")!)
         images.append(UIImage(named: "Image1")!)
@@ -48,8 +49,6 @@ class CollectionViewController: UICollectionViewController {
         images.append(UIImage(named: "Image1")!)
         self.collectionView!.reloadData()
     }
-    
-    
 
     /*
     // MARK: - Navigation
