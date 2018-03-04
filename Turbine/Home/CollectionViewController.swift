@@ -12,11 +12,12 @@ private let reuseIdentifier = "Icon"
 
 class CollectionViewController: UICollectionViewController {
     
-    var customIconFlowLayout: CustomIconFlowLayout!
-    var images = [UIImage]()
+    private var customIconFlowLayout: CustomIconFlowLayout!
+    private var images = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCustomNavigationBar()
         customIconFlowLayout = CustomIconFlowLayout()
         self.collectionView!.collectionViewLayout = customIconFlowLayout
         customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
@@ -24,7 +25,22 @@ class CollectionViewController: UICollectionViewController {
         loadImages()
     }
     
-    func loadImages() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    private func setCustomNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    private func loadImages() {
         images.append(UIImage(named: "Image1")!)
         images.append(UIImage(named: "Image1")!)
         images.append(UIImage(named: "Image1")!)
@@ -33,8 +49,6 @@ class CollectionViewController: UICollectionViewController {
         images.append(UIImage(named: "Image1")!)
         self.collectionView!.reloadData()
     }
-    
-    
 
     /*
     // MARK: - Navigation
@@ -64,8 +78,10 @@ class CollectionViewController: UICollectionViewController {
             return headerView
         case UICollectionElementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeFooterView", for: indexPath) as! HomeFooterView
-            footerView.referencesButton.layer.borderWidth = 2
+            footerView.referencesButton.layer.borderWidth = 1
             footerView.referencesButton.layer.borderColor = UIColor.black.cgColor
+            footerView.rightsLabel.text = "Developed by ELSO Latin America\nin colaboration with Américas Medical Group.\nAll rights reserved © 2018"
+            footerView.rightsLabel.sizeToFit()
             return footerView
         default:
             assert(false, "Unexpected element kind")

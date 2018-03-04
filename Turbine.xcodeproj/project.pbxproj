@@ -31,6 +31,7 @@
 		49BE6B312039D9730027FD46 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */; };
 		49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */; };
 		49BE6B35203A2B590027FD46 /* HomeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B34203A2B590027FD46 /* HomeFooterView.swift */; };
+		49BE6B38204368180027FD46 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B37204368180027FD46 /* DetailViewController.swift */; };
 		4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */; };
 		4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */; };
 		CEF47C14175EA6348319346C /* Pods_Turbine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */; };
@@ -64,6 +65,7 @@
 		49BE6B302039D9730027FD46 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		49BE6B322039DFDF0027FD46 /* CustomIconFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIconFlowLayout.swift; sourceTree = "<group>"; };
 		49BE6B34203A2B590027FD46 /* HomeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterView.swift; sourceTree = "<group>"; };
+		49BE6B37204368180027FD46 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9EC5D70E7E38F2835BF30409 /* Pods-Turbine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turbine/Pods-Turbine.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				49BE6B0F2038BAE10027FD46 /* Fonts */,
 				49BE6B0D2038A87B0027FD46 /* GoogleService-Info.plist */,
 				49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */,
+				49BE6B36204367FA0027FD46 /* Detail */,
 				4D2AC137204099D000F5F330 /* Home */,
 				49BE6AFF2038A7D10027FD46 /* Main.storyboard */,
 				49BE6B022038A7D10027FD46 /* Assets.xcassets */,
@@ -144,6 +147,14 @@
 				49BE6B152038BB1B0027FD46 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		49BE6B36204367FA0027FD46 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				49BE6B37204368180027FD46 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		4D2AC137204099D000F5F330 /* Home */ = {
@@ -323,6 +334,7 @@
 				4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */,
 				49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */,
 				4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */,
+				49BE6B38204368180027FD46 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
