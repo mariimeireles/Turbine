@@ -78,8 +78,10 @@ class CollectionViewController: UICollectionViewController {
             return headerView
         case UICollectionElementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeFooterView", for: indexPath) as! HomeFooterView
-            footerView.referencesButton.layer.borderWidth = 2
+            footerView.referencesButton.layer.borderWidth = 1
             footerView.referencesButton.layer.borderColor = UIColor.black.cgColor
+            footerView.rightsLabel.text = "Developed by ELSO Latin America\nin colaboration with Américas Medical Group.\nAll rights reserved © 2018"
+            footerView.rightsLabel.sizeToFit()
             return footerView
         default:
             assert(false, "Unexpected element kind")

@@ -105,38 +105,33 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXe-dv-OhN">
-                                    <rect key="frame" x="36" y="48" width="457" height="119"/>
+                                    <rect key="frame" x="36" y="48" width="457" height="90"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="119" id="a7I-gW-0UX"/>
+                                        <constraint firstAttribute="height" constant="90" id="a7I-gW-0UX"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="22"/>
                                     <state key="normal" title="ver referências">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZd-RZ-7H5">
-                                    <rect key="frame" x="86" y="222" width="358" height="63.5"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="358" id="KeF-vZ-2jh"/>
-                                        <constraint firstAttribute="height" constant="63.5" id="b6C-89-2gs"/>
-                                    </constraints>
-                                    <string key="text">Developed by ELSO Latin America
-in colaboration with Américas Medical Group.
-All rights reserved © 2018</string>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZd-RZ-7H5" userLabel="rights">
+                                    <rect key="frame" x="36" y="193" width="457" height="21.5"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="AZd-RZ-7H5" firstAttribute="centerX" secondItem="Fmf-vQ-xsJ" secondAttribute="centerX" id="7VO-fe-4w6"/>
                                 <constraint firstItem="zXe-dv-OhN" firstAttribute="leading" secondItem="Fmf-vQ-xsJ" secondAttribute="leading" constant="36" id="Dhi-nW-nZR"/>
+                                <constraint firstItem="AZd-RZ-7H5" firstAttribute="leading" secondItem="Fmf-vQ-xsJ" secondAttribute="leading" constant="36" id="VDA-IY-TDA"/>
+                                <constraint firstAttribute="trailing" secondItem="AZd-RZ-7H5" secondAttribute="trailing" constant="36" id="YfD-Qe-gEH"/>
                                 <constraint firstItem="AZd-RZ-7H5" firstAttribute="top" secondItem="zXe-dv-OhN" secondAttribute="bottom" constant="55" id="aHS-R6-kwy"/>
                                 <constraint firstAttribute="trailing" secondItem="zXe-dv-OhN" secondAttribute="trailing" constant="36" id="dfz-6Y-Jaz"/>
                                 <constraint firstItem="zXe-dv-OhN" firstAttribute="top" secondItem="Fmf-vQ-xsJ" secondAttribute="top" constant="48" id="sUu-yM-H8i"/>
                             </constraints>
                             <connections>
                                 <outlet property="referencesButton" destination="zXe-dv-OhN" id="FLd-y9-yT8"/>
+                                <outlet property="rightsLabel" destination="AZd-RZ-7H5" id="qRb-um-GPR"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
