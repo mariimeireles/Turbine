@@ -18,7 +18,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Imagens em Indicações"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         customImageFlowLayout = CustomImageFlowLayout()
         self.collectionView!.collectionViewLayout = customImageFlowLayout
         customImageFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 100)
@@ -29,28 +29,28 @@ class GalleryCollectionViewController: UICollectionViewController {
     
     private func loadImages() {
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
+        images.append(UIImage(named: "Image3")!)
         images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
+        images.append(UIImage(named: "Image2")!)
         self.collectionView!.reloadData()
     }
     
@@ -78,6 +78,13 @@ class GalleryCollectionViewController: UICollectionViewController {
         default:
             assert(false, "Unexpected element kind")
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let galleryDetailVC = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryDetail") as! GalleryDetailViewController
+        galleryDetailVC.image = images[indexPath.row]
+        self.navigationController?.pushViewController(galleryDetailVC, animated: true)
     }
 
 
