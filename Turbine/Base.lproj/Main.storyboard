@@ -191,7 +191,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="Image1"/>
                                         <connections>
-                                            <segue destination="YSv-Ri-Bg8" kind="show" id="ay7-qZ-wUe"/>
+                                            <segue destination="YSv-Ri-Bg8" kind="show" id="284-gJ-hcW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -460,7 +460,6 @@
                             <outlet property="delegate" destination="YSv-Ri-Bg8" id="tQd-60-35W"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="0u6-Jh-OZ7"/>
                     <size key="freeformSize" width="529" height="931"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ox7-zl-hAf" userLabel="First Responder" sceneMemberID="firstResponder"/>

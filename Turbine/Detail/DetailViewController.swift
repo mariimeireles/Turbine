@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detail"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setIconImage()
         setTextLabel()
     }
@@ -24,6 +25,7 @@ class DetailViewController: UIViewController {
         iconImage.image = UIImage(named: "Image1")
         iconImage.layer.cornerRadius = iconImage.frame.size.width / 2
         iconImage.layer.masksToBounds = true
+
     }
     
     private func setTextLabel() {

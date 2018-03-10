@@ -17,12 +17,15 @@ class GalleryCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Imagens em Indicações"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         customImageFlowLayout = CustomImageFlowLayout()
         self.collectionView!.collectionViewLayout = customImageFlowLayout
         customImageFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 100)
         customImageFlowLayout.footerReferenceSize = CGSize(width: collectionView!.frame.width, height: 200)
         loadImages()
     }
+    
     
     private func loadImages() {
         images.append(UIImage(named: "Image1")!)
