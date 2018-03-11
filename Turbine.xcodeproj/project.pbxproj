@@ -39,6 +39,7 @@
 		49BE6B35203A2B590027FD46 /* HomeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B34203A2B590027FD46 /* HomeFooterView.swift */; };
 		49BE6B38204368180027FD46 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE6B37204368180027FD46 /* DetailViewController.swift */; };
 		49CB7E51204C887D00BBCD13 /* ReferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB7E50204C887D00BBCD13 /* ReferencesViewController.swift */; };
+		49D513F12054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D513F02054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift */; };
 		4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */; };
 		4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */; };
 		CEF47C14175EA6348319346C /* Pods_Turbine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */; };
@@ -80,6 +81,7 @@
 		49BE6B34203A2B590027FD46 /* HomeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterView.swift; sourceTree = "<group>"; };
 		49BE6B37204368180027FD46 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		49CB7E50204C887D00BBCD13 /* ReferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesViewController.swift; sourceTree = "<group>"; };
+		49D513F02054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D2AC13520405F6B00F5F330 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4DC4E9C62040599500DEE91B /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		9EC5D70E7E38F2835BF30409 /* Pods-Turbine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turbine/Pods-Turbine.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				4922F40C20545ED9000B37BC /* GalleryDetailViewController.swift */,
+				49D513F02054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift */,
 			);
 			path = "Gallery Detail";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */,
 				4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */,
 				4997420920543EB1000BC171 /* GalleryCollectionViewController.swift in Sources */,
+				49D513F12054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift in Sources */,
 				49BE6B38204368180027FD46 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

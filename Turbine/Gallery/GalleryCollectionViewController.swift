@@ -84,6 +84,7 @@ class GalleryCollectionViewController: UICollectionViewController {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let galleryDetailVC = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryDetail") as! GalleryDetailViewController
         galleryDetailVC.image = images[indexPath.row]
+        galleryDetailVC.images = images
         self.navigationController?.pushViewController(galleryDetailVC, animated: true)
     }
 
