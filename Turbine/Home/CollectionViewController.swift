@@ -14,6 +14,7 @@ class CollectionViewController: UICollectionViewController {
     
     private var customIconFlowLayout: CustomIconFlowLayout!
     private var images = [UIImage]()
+    private var isCalculator = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,16 +51,6 @@ class CollectionViewController: UICollectionViewController {
         self.collectionView!.reloadData()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
@@ -87,36 +78,17 @@ class CollectionViewController: UICollectionViewController {
             assert(false, "Unexpected element kind")
         }
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if isCalculator {
+            let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorTableViewController
+            self.navigationController?.pushViewController(calculatorVC, animated: true)
+
+        } else {
+            let detailVC = mainStoryBoard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
-    */
 
 }
