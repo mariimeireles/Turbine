@@ -167,22 +167,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="529" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp5-Yh-NF2">
-                                            <rect key="frame" x="44" y="9" width="475" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-0r-dxT">
+                                            <rect key="frame" x="44" y="16" width="455" height="21"/>
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
-                                            <state key="normal" title="website">
-                                                <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
+                                            <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Sp5-Yh-NF2" firstAttribute="top" secondItem="nk0-sr-Cfi" secondAttribute="top" constant="9" id="8Mj-MA-QHX"/>
-                                        <constraint firstAttribute="trailing" secondItem="Sp5-Yh-NF2" secondAttribute="trailing" constant="10" id="ZfZ-cx-bJx"/>
-                                        <constraint firstItem="Sp5-Yh-NF2" firstAttribute="leading" secondItem="nk0-sr-Cfi" secondAttribute="leading" constant="44" id="cW2-C5-ot0"/>
+                                        <constraint firstItem="e8u-0r-dxT" firstAttribute="top" secondItem="nk0-sr-Cfi" secondAttribute="topMargin" constant="5" id="3YB-5J-oBK"/>
+                                        <constraint firstItem="e8u-0r-dxT" firstAttribute="leading" secondItem="nk0-sr-Cfi" secondAttribute="leadingMargin" constant="24" id="H1F-0Q-BRu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="e8u-0r-dxT" secondAttribute="trailing" constant="10" id="gTL-rk-NQ8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="websiteLabel" destination="Sp5-Yh-NF2" id="QYW-i6-gle"/>
+                                    <outlet property="websiteLabel" destination="e8u-0r-dxT" id="E2f-ZM-2Zh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -195,7 +194,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWN-RT-Qw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736" y="-1136"/>
+            <point key="canvasLocation" x="3735.9375" y="-1136.0915492957747"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="kkQ-N5-iln">
+            <objects>
+                <viewController storyboardIdentifier="Website" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8hX-cG-DfK" customClass="WebViewController" customModule="Turbine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJx-dd-iBe">
+                        <rect key="frame" x="0.0" y="0.0" width="529" height="931"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rid-Hp-iFO"/>
+                    </view>
+                    <size key="freeformSize" width="529" height="931"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YV-Q9-jXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5017" y="-1136"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="6px-76-uuD">

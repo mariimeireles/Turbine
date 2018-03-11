@@ -10,7 +10,7 @@ import UIKit
 
 class CalcullatorCell: UITableViewCell {
 
-    @IBOutlet weak var websiteLabel: UIButton!
+    @IBOutlet weak var websiteLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
