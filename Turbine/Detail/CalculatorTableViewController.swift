@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class CalculatorTableViewController: UITableViewController {
+class CalculatorTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     
     var addresses = ["http://www.save-score.com", "http://www.respscore.com"]
 
@@ -35,10 +36,11 @@ class CalculatorTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let websitelVC = mainStoryBoard.instantiateViewController(withIdentifier: "Website") as! WebViewController
-        websitelVC.webSite = addresses[indexPath.row]
-        self.navigationController?.pushViewController(websitelVC, animated: true)
+        let webSite = addresses[indexPath.row]
+        let url = URL(string: webSite)!
+        let vc = SFSafariViewController(url: url)
+        vc.delegate = self
+        present(vc, animated: true)
     }
 
 }
