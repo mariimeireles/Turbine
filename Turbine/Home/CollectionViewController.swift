@@ -21,7 +21,7 @@ class CollectionViewController: UICollectionViewController {
         setCustomNavigationBar()
         customIconFlowLayout = CustomIconFlowLayout()
         self.collectionView!.collectionViewLayout = customIconFlowLayout
-        customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
+        customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 280)
         customIconFlowLayout.footerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
         loadImages()
     }
