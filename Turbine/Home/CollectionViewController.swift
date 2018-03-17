@@ -7,23 +7,38 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "Icon"
 
 class CollectionViewController: UICollectionViewController {
     
     private var customIconFlowLayout: CustomIconFlowLayout!
+    private var contentViewModel: ContentViewModel!
+    private var inMemoryIconImages: InMemoryIconImages!
     private var images = [UIImage]()
     private var isCalculator = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomNavigationBar()
+        collectionViewLayout()
+        settingViewModel()
+        DispatchQueue.main.async {
+            self.collectionView!.reloadData()
+        }
+    }
+    
+    private func settingViewModel() {
+        self.inMemoryIconImages = InMemoryIconImages()
+        self.contentViewModel = ContentViewModel(iconsFetcher: self.inMemoryIconImages)
+    }
+    
+    private func collectionViewLayout() {
         customIconFlowLayout = CustomIconFlowLayout()
         self.collectionView!.collectionViewLayout = customIconFlowLayout
         customIconFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 280)
         customIconFlowLayout.footerReferenceSize = CGSize(width: collectionView!.frame.width, height: 330)
-        loadImages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,25 +55,15 @@ class CollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-    
-    private func loadImages() {
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image1")!)
-        self.collectionView!.reloadData()
-    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return self.contentViewModel.iconImages.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
-        let image = images[indexPath.row]
-        cell.imageView.image = image
+        let iconImage = self.contentViewModel.iconImages[indexPath.row]
+        cell.imageView.image = UIImage(named: iconImage.iconImage1)!
         return cell
     }
     

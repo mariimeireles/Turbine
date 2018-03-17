@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4922F40A20544664000B37BC /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F40920544664000B37BC /* ImageCollectionViewCell.swift */; };
 		4922F40D20545ED9000B37BC /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F40C20545ED9000B37BC /* GalleryDetailViewController.swift */; };
+		4962B5AC205C96D90002970B /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AB205C96D90002970B /* Content.swift */; };
+		4962B5AE205D90380002970B /* IconImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AD205D90380002970B /* IconImages.swift */; };
+		4962B5B0205D95250002970B /* RetrieveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AF205D95250002970B /* RetrieveContent.swift */; };
+		4962B5B2205D95500002970B /* InMemoryIconImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5B1205D95500002970B /* InMemoryIconImages.swift */; };
+		4962B5B5205D959A0002970B /* RetrieveIconImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5B4205D959A0002970B /* RetrieveIconImages.swift */; };
+		4962B5B8205D9B6D0002970B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5B7205D9B6D0002970B /* ContentViewModel.swift */; };
 		4997420920543EB1000BC171 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420820543EB1000BC171 /* GalleryCollectionViewController.swift */; };
 		4997420B20543F26000BC171 /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420A20543F26000BC171 /* CustomImageFlowLayout.swift */; };
 		4997420D205444A3000BC171 /* GalleryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420C205444A3000BC171 /* GalleryHeaderView.swift */; };
@@ -51,6 +57,12 @@
 		30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turbine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4922F40920544664000B37BC /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4922F40C20545ED9000B37BC /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
+		4962B5AB205C96D90002970B /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		4962B5AD205D90380002970B /* IconImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImages.swift; sourceTree = "<group>"; };
+		4962B5AF205D95250002970B /* RetrieveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveContent.swift; sourceTree = "<group>"; };
+		4962B5B1205D95500002970B /* InMemoryIconImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryIconImages.swift; sourceTree = "<group>"; };
+		4962B5B4205D959A0002970B /* RetrieveIconImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveIconImages.swift; sourceTree = "<group>"; };
+		4962B5B7205D9B6D0002970B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4997420820543EB1000BC171 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		4997420A20543F26000BC171 /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		4997420C205444A3000BC171 /* GalleryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryHeaderView.swift; sourceTree = "<group>"; };
@@ -121,6 +133,62 @@
 			path = "Gallery Detail";
 			sourceTree = "<group>";
 		};
+		4962B5A4205C96270002970B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49BE6B022038A7D10027FD46 /* Assets.xcassets */,
+				49BE6B0F2038BAE10027FD46 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4962B5A5205C963C0002970B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */,
+				49BE6B072038A7D10027FD46 /* Info.plist */,
+				49BE6B0D2038A87B0027FD46 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4962B5A6205C96730002970B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				4962B5B6205D9B5D0002970B /* View Model */,
+				4962B5A8205C96920002970B /* Web Service */,
+				4962B5A7205C96780002970B /* Model */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		4962B5A7205C96780002970B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4962B5AB205C96D90002970B /* Content.swift */,
+				4962B5AD205D90380002970B /* IconImages.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4962B5A8205C96920002970B /* Web Service */ = {
+			isa = PBXGroup;
+			children = (
+				4962B5AF205D95250002970B /* RetrieveContent.swift */,
+				4962B5B4205D959A0002970B /* RetrieveIconImages.swift */,
+				4962B5B1205D95500002970B /* InMemoryIconImages.swift */,
+			);
+			path = "Web Service";
+			sourceTree = "<group>";
+		};
+		4962B5B6205D9B5D0002970B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				4962B5B7205D9B6D0002970B /* ContentViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		4997420720543E69000BC171 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,18 +222,16 @@
 		49BE6AFA2038A7D10027FD46 /* Turbine */ = {
 			isa = PBXGroup;
 			children = (
-				49BE6B0F2038BAE10027FD46 /* Fonts */,
-				49BE6B0D2038A87B0027FD46 /* GoogleService-Info.plist */,
-				49BE6AFB2038A7D10027FD46 /* AppDelegate.swift */,
+				4962B5A6205C96730002970B /* Content */,
+				4962B5A5205C963C0002970B /* Supporting Files */,
+				4962B5A4205C96270002970B /* Resources */,
 				4922F40B20545E7F000B37BC /* Gallery Detail */,
 				4997420720543E69000BC171 /* Gallery */,
 				49CB7E4F204C885100BBCD13 /* References */,
 				49BE6B36204367FA0027FD46 /* Detail */,
 				4D2AC137204099D000F5F330 /* Home */,
 				49BE6AFF2038A7D10027FD46 /* Main.storyboard */,
-				49BE6B022038A7D10027FD46 /* Assets.xcassets */,
 				49BE6B042038A7D10027FD46 /* LaunchScreen.storyboard */,
-				49BE6B072038A7D10027FD46 /* Info.plist */,
 			);
 			path = Turbine;
 			sourceTree = "<group>";
@@ -384,6 +450,8 @@
 			files = (
 				49D513F52054C6DC008EB284 /* CalculatorTableViewController.swift in Sources */,
 				49BE6AFC2038A7D10027FD46 /* AppDelegate.swift in Sources */,
+				4962B5B2205D95500002970B /* InMemoryIconImages.swift in Sources */,
+				4962B5AE205D90380002970B /* IconImages.swift in Sources */,
 				49BE6B35203A2B590027FD46 /* HomeFooterView.swift in Sources */,
 				4922F40D20545ED9000B37BC /* GalleryDetailViewController.swift in Sources */,
 				4922F40A20544664000B37BC /* ImageCollectionViewCell.swift in Sources */,
@@ -392,9 +460,13 @@
 				4997420B20543F26000BC171 /* CustomImageFlowLayout.swift in Sources */,
 				4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */,
 				4997420F205444BE000BC171 /* GalleryeFooterView.swift in Sources */,
+				4962B5B8205D9B6D0002970B /* ContentViewModel.swift in Sources */,
 				4997420D205444A3000BC171 /* GalleryHeaderView.swift in Sources */,
 				49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */,
+				4962B5B0205D95250002970B /* RetrieveContent.swift in Sources */,
 				4DC4E9C72040599500DEE91B /* HomeHeaderView.swift in Sources */,
+				4962B5B5205D959A0002970B /* RetrieveIconImages.swift in Sources */,
+				4962B5AC205C96D90002970B /* Content.swift in Sources */,
 				49D513F72054C802008EB284 /* CalcullatorCell.swift in Sources */,
 				4997420920543EB1000BC171 /* GalleryCollectionViewController.swift in Sources */,
 				49D513F12054B4BC008EB284 /* ImageGalleryDetailCollectionViewCell.swift in Sources */,
@@ -538,7 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQU3QL4RG3;
-				INFOPLIST_FILE = Turbine/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Turbine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meireles.Turbine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQU3QL4RG3;
-				INFOPLIST_FILE = Turbine/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Turbine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meireles.Turbine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
