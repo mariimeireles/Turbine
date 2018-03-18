@@ -11,7 +11,6 @@ import FirebaseDatabase
 
 struct Content {
     
-    let key: String
     let calculator: Bool
     var gallery: [[String:String]]?
     var haveGallery: Bool
@@ -20,28 +19,9 @@ struct Content {
     let text: String?
     let title: String
     let webSites: [String]?
-    let itemRef: DatabaseReference?
-    
-//    init(key: String, calculator: Bool, gallery: [AnyObject]?, haveGallery: Bool, iconImages: IconImages, text: String?, title: String, webSites: [String]?) {
-//
-//        self.key = key
-//        self.calculator = calculator
-//        self.gallery = gallery
-//        self.haveGallery = haveGallery
-//        self.iconImage1 = iconImages.iconImage1
-//        self.iconImage2 = iconImages.iconImage2
-//        self.text = text
-//        self.title = title
-//        self.webSites = webSites
-//        self.itemRef = nil
-//    }
     
     init(snapshot: DataSnapshot) {
         
-        self.key = snapshot.key
-        self.itemRef = snapshot.ref
-        self.iconImage1 = "Image1"
-        self.iconImage2 = "Image1"
         let snapshotValue = snapshot.value as! NSDictionary
         
         if let calculator = snapshotValue["calculator"] as? Bool {
@@ -51,16 +31,6 @@ struct Content {
         }
         if let gallery = snapshotValue["gallery"] as? [[String:String]] {
             self.gallery = gallery
-//            for item in gallery {
-//                for image in item {
-//                    if image.key == "imagePath" {
-//                        print("IMAGEPATH\(image.value)")
-//                    }
-//                    if image.key == "subtitle" {
-//                        print("SUBTITLE\(image.value)")
-//                    }
-//                }
-//            }
         } else {
             self.gallery = nil
         }
@@ -68,6 +38,16 @@ struct Content {
             self.haveGallery = haveGallery
         } else {
             self.haveGallery = false
+        }
+        if let iconImage1 = snapshotValue["iconImage1"] as? String {
+            self.iconImage1 = iconImage1
+        } else {
+            self.iconImage1 = "Image1"
+        }
+        if let iconImage2 = snapshotValue["iconImage2"] as? String {
+            self.iconImage2 = iconImage2
+        } else {
+            self.iconImage2 = "Image1"
         }
         if let text = snapshotValue["text"] as? String {
             self.text = text

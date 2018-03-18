@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     
     private func setIconImage() {
         let imageName = content.iconImage2
-        iconImage.image = UIImage(named: imageName)
+        iconImage.sd_setImage(with: URL(string: imageName))
         iconImage.layer.cornerRadius = iconImage.frame.size.width / 2
         iconImage.layer.masksToBounds = true
     }

@@ -27,6 +27,10 @@ class GalleryCollectionViewController: UICollectionViewController {
         customImageFlowLayout.headerReferenceSize = CGSize(width: collectionView!.frame.width, height: 100)
         customImageFlowLayout.footerReferenceSize = CGSize(width: collectionView!.frame.width, height: 200)
         loadImages()
+        DispatchQueue.main.async {
+            self.collectionView!.reloadData()
+        }
+        
     }
     
     private func loadImages() {
@@ -39,7 +43,6 @@ class GalleryCollectionViewController: UICollectionViewController {
                 }
             }
         }
-        self.collectionView!.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

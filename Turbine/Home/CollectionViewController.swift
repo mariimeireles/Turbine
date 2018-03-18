@@ -8,15 +8,12 @@
 
 import UIKit
 import FirebaseDatabase
-//import SDWebImage
 
 private let reuseIdentifier = "Icon"
 
 class CollectionViewController: UICollectionViewController {
     
     private var customIconFlowLayout: CustomIconFlowLayout!
-    private var contentViewModel: ContentViewModel!
-    private var inMemoryIconImages: InMemoryIconImages!
     private var content = [Content]()
     private var firebaseRef: DatabaseReference!
     
@@ -24,7 +21,6 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         setCustomNavigationBar()
         collectionViewLayout()
-        settingViewModel()
         self.firebaseRef = Database.database().reference().child("Content")
         loadContent()
     }
@@ -41,11 +37,6 @@ class CollectionViewController: UICollectionViewController {
                 self.collectionView!.reloadData()
             }
         })
-    }
-    
-    private func settingViewModel() {
-        self.inMemoryIconImages = InMemoryIconImages()
-        self.contentViewModel = ContentViewModel(iconsFetcher: self.inMemoryIconImages)
     }
     
     private func collectionViewLayout() {
@@ -77,7 +68,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
         let image = self.content[indexPath.row]
-        cell.imageView.image = UIImage(named: image.iconImage1)
+        cell.imageView.sd_setImage(with: URL(string: image.iconImage1))
         return cell
     }
     
