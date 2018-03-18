@@ -10,24 +10,25 @@ import Foundation
 
 struct Content {
     
-    let title: String
+    let calculator: Bool
+    let gallery: [String]?
+    let haveGallery: Bool
     let iconImage1: String
     let iconImage2: String
-    let text: String
-    let calculator: Bool
+    let text: String?
+    let title: String
     let webSites: [String]?
-    let gallery: Bool
-    let galleryImages: [String]?
     
-    init(title: String, iconImages: IconImages, text: String, calculator: Bool, webSites: [String]?, gallery: Bool, galleryImages: [String]?) {
-        self.title = title
+    init(calculator: Bool, gallery: [String]?, haveGallery: Bool, iconImages: IconImages, text: String?, title: String, webSites: [String]?) {
+        
+        self.calculator = calculator
+        self.gallery = gallery
+        self.haveGallery = haveGallery
         self.iconImage1 = iconImages.iconImage1
         self.iconImage2 = iconImages.iconImage2
         self.text = text
-        self.calculator = calculator
+        self.title = title
         self.webSites = webSites
-        self.gallery = gallery
-        self.galleryImages = galleryImages
     }
     
 }

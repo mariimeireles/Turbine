@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
+import SDWebImage
 
 private let reuseIdentifier = "Icon"
 
@@ -17,6 +18,12 @@ class CollectionViewController: UICollectionViewController {
     private var contentViewModel: ContentViewModel!
     private var inMemoryIconImages: InMemoryIconImages!
     private var images = [UIImage]()
+    
+    ////////////
+    private var imageTest = [ImageTest]()
+    private var firebaseRef: DatabaseReference!
+    ////////////
+    
     private var isCalculator = true
 
     override func viewDidLoad() {
@@ -24,10 +31,30 @@ class CollectionViewController: UICollectionViewController {
         setCustomNavigationBar()
         collectionViewLayout()
         settingViewModel()
+        
+        ////////////
+        self.firebaseRef = Database.database().reference().child("images")
+        loadImageTest()
+        ////////////
+
         DispatchQueue.main.async {
             self.collectionView!.reloadData()
         }
     }
+    
+    ////////////
+    private func loadImageTest() {
+        self.firebaseRef.observe(DataEventType.value, with: { (snapshot) in
+            var newImages = [ImageTest]()
+            for imageTestSnapshot in snapshot.children {
+                let imageTestObject = ImageTest(snapshot: imageTestSnapshot as! DataSnapshot)
+                newImages.append(imageTestObject)
+            }
+            self.imageTest = newImages
+            self.collectionView!.reloadData()
+        })
+    }
+    ////////////
     
     private func settingViewModel() {
         self.inMemoryIconImages = InMemoryIconImages()
@@ -57,14 +84,23 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.contentViewModel.iconImages.count
+        ////////////
+//        return self.contentViewModel.iconImages.count
+        return self.imageTest.count
+        ////////////
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        ////////////
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
-        let iconImage = self.contentViewModel.iconImages[indexPath.row]
-        cell.imageView.image = UIImage(named: iconImage.iconImage1)!
+//        let iconImage = self.contentViewModel.iconImages[indexPath.row]
+//        cell.imageView.image = UIImage(named: iconImage.iconImage1)!
+        let image = self.imageTest[indexPath.row]
+        cell.imageView.sd_setImage(with: URL(string: image.url))
+            //, placeholderImage: UIImage(named: "Image1"))
         return cell
+        ////////////
+
     }
     
     override func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

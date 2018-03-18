@@ -4,11 +4,12 @@
 target 'Turbine' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  pod 'Firebase'
+  pod 'FirebaseDatabase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'SDWebImage/WebP'
+  
   # Pods for Turbine
-
-	pod 'Firebase'
-	pod 'FirebaseDatabase'
-	pod 'Firebase/Core'
 
 end

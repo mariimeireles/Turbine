@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4922F40A20544664000B37BC /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F40920544664000B37BC /* ImageCollectionViewCell.swift */; };
 		4922F40D20545ED9000B37BC /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F40C20545ED9000B37BC /* GalleryDetailViewController.swift */; };
+		49461AF8205EC049009CC8C2 /* ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49461AF7205EC049009CC8C2 /* ImageTest.swift */; };
 		4962B5AC205C96D90002970B /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AB205C96D90002970B /* Content.swift */; };
 		4962B5AE205D90380002970B /* IconImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AD205D90380002970B /* IconImages.swift */; };
 		4962B5B0205D95250002970B /* RetrieveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AF205D95250002970B /* RetrieveContent.swift */; };
@@ -57,6 +58,7 @@
 		30826A57B8FE2455B7308D15 /* Pods_Turbine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turbine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4922F40920544664000B37BC /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4922F40C20545ED9000B37BC /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
+		49461AF7205EC049009CC8C2 /* ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTest.swift; sourceTree = "<group>"; };
 		4962B5AB205C96D90002970B /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		4962B5AD205D90380002970B /* IconImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImages.swift; sourceTree = "<group>"; };
 		4962B5AF205D95250002970B /* RetrieveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveContent.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4962B5AB205C96D90002970B /* Content.swift */,
+				49461AF7205EC049009CC8C2 /* ImageTest.swift */,
 				4962B5AD205D90380002970B /* IconImages.swift */,
 			);
 			path = Model;
@@ -427,13 +430,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Turbine/Pods-Turbine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +468,7 @@
 				4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */,
 				4997420F205444BE000BC171 /* GalleryeFooterView.swift in Sources */,
 				4962B5B8205D9B6D0002970B /* ContentViewModel.swift in Sources */,
+				49461AF8205EC049009CC8C2 /* ImageTest.swift in Sources */,
 				4997420D205444A3000BC171 /* GalleryHeaderView.swift in Sources */,
 				49BE6B332039DFDF0027FD46 /* CustomIconFlowLayout.swift in Sources */,
 				4962B5B0205D95250002970B /* RetrieveContent.swift in Sources */,
