@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 private let reuseIdentifier = "Image"
 
 class GalleryCollectionViewController: UICollectionViewController {
     
     private var customImageFlowLayout: CustomImageFlowLayout!
-    private var images = [UIImage]()
+    private var imagesPath = [String]()
+    private var gallery = [[String:String]]()
+    var content: Content!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,42 +29,27 @@ class GalleryCollectionViewController: UICollectionViewController {
         loadImages()
     }
     
-    
     private func loadImages() {
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
-        images.append(UIImage(named: "Image3")!)
-        images.append(UIImage(named: "Image1")!)
-        images.append(UIImage(named: "Image2")!)
+        let gallery = content.gallery
+        self.gallery = gallery!
+        for item in gallery! {
+            for image in item {
+                if image.key == "imagePath" {
+                    self.imagesPath.append(image.value)
+                }
+            }
+        }
         self.collectionView!.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return self.imagesPath.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-        let image = images[indexPath.row]
-        cell.imageView.image = image
+        let imageURL = self.imagesPath[indexPath.row]
+        cell.imageView.sd_setImage(with: URL(string: imageURL))
         return cell
     }
     
@@ -83,8 +71,9 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let galleryDetailVC = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryDetail") as! GalleryDetailViewController
-        galleryDetailVC.image = images[indexPath.row]
-        galleryDetailVC.images = images
+        galleryDetailVC.imageSelected = gallery[indexPath.row]
+        galleryDetailVC.imagesFromPrevious = gallery
+        galleryDetailVC.imagesPath = imagesPath
         self.navigationController?.pushViewController(galleryDetailVC, animated: true)
     }
 

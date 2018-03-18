@@ -82,7 +82,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione o conteúdo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G92-U2-WPM">
-                                    <rect key="frame" x="20" y="201.5" width="180.5" height="21"/>
+                                    <rect key="frame" x="20" y="201.5" width="178.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -224,15 +224,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-Rf-e7t">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-Rf-e7t">
                                         <rect key="frame" x="180" y="297" width="208" height="176"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="208" id="1Si-IZ-Fum"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="176" id="U0x-wx-reb"/>
                                         </constraints>
-                                        <state key="normal" title="Button" backgroundImage="Image1"/>
+                                        <state key="normal" title="Button" backgroundImage="galleryIcon"/>
                                         <connections>
-                                            <segue destination="YSv-Ri-Bg8" kind="show" id="284-gJ-hcW"/>
+                                            <segue destination="YSv-Ri-Bg8" kind="show" identifier="GallerySegue" id="284-gJ-hcW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -266,6 +266,7 @@
                     </view>
                     <size key="freeformSize" width="529" height="931"/>
                     <connections>
+                        <outlet property="galleryButton" destination="0Za-Rf-e7t" id="lXD-hz-P7t"/>
                         <outlet property="iconImage" destination="20s-7W-sYk" id="kVy-ZK-VFb"/>
                         <outlet property="textLabel" destination="7Oj-tA-eVE" id="svI-hI-HQa"/>
                     </connections>
@@ -527,6 +528,7 @@
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVa-MK-cnO">
                                         <rect key="frame" x="20" y="16" width="528" height="600"/>
+                                        <color key="backgroundColor" red="0.50196078430000002" green="0.0" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="600" id="Qo8-Nb-ggk"/>
                                         </constraints>
@@ -617,7 +619,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image1" width="208" height="208"/>
+        <image name="galleryIcon" width="208" height="208"/>
         <image name="guiaDeEcmoCopiar" width="317" height="78"/>
     </resources>
 </document>

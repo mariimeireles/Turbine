@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
-import SDWebImage
+//import SDWebImage
 
 private let reuseIdentifier = "Icon"
 
@@ -17,44 +17,31 @@ class CollectionViewController: UICollectionViewController {
     private var customIconFlowLayout: CustomIconFlowLayout!
     private var contentViewModel: ContentViewModel!
     private var inMemoryIconImages: InMemoryIconImages!
-    private var images = [UIImage]()
-    
-    ////////////
-    private var imageTest = [ImageTest]()
+    private var content = [Content]()
     private var firebaseRef: DatabaseReference!
-    ////////////
     
-    private var isCalculator = true
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomNavigationBar()
         collectionViewLayout()
         settingViewModel()
-        
-        ////////////
-        self.firebaseRef = Database.database().reference().child("images")
-        loadImageTest()
-        ////////////
-
-        DispatchQueue.main.async {
-            self.collectionView!.reloadData()
-        }
+        self.firebaseRef = Database.database().reference().child("Content")
+        loadContent()
     }
     
-    ////////////
-    private func loadImageTest() {
+    private func loadContent() {
         self.firebaseRef.observe(DataEventType.value, with: { (snapshot) in
-            var newImages = [ImageTest]()
-            for imageTestSnapshot in snapshot.children {
-                let imageTestObject = ImageTest(snapshot: imageTestSnapshot as! DataSnapshot)
-                newImages.append(imageTestObject)
+            var newContents = [Content]()
+            for contentSnapshot in snapshot.children {
+                let contentObject = Content(snapshot: contentSnapshot as! DataSnapshot)
+                newContents.append(contentObject)
             }
-            self.imageTest = newImages
-            self.collectionView!.reloadData()
+            self.content = newContents
+            DispatchQueue.main.async {
+                self.collectionView!.reloadData()
+            }
         })
     }
-    ////////////
     
     private func settingViewModel() {
         self.inMemoryIconImages = InMemoryIconImages()
@@ -84,23 +71,14 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        ////////////
-//        return self.contentViewModel.iconImages.count
-        return self.imageTest.count
-        ////////////
+        return self.content.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        ////////////
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
-//        let iconImage = self.contentViewModel.iconImages[indexPath.row]
-//        cell.imageView.image = UIImage(named: iconImage.iconImage1)!
-        let image = self.imageTest[indexPath.row]
-        cell.imageView.sd_setImage(with: URL(string: image.url))
-            //, placeholderImage: UIImage(named: "Image1"))
+        let image = self.content[indexPath.row]
+        cell.imageView.image = UIImage(named: image.iconImage1)
         return cell
-        ////////////
-
     }
     
     override func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -122,12 +100,15 @@ class CollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let selectedContent = content[indexPath.row]
+        let isCalculator = selectedContent.calculator
         if isCalculator {
             let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorTableViewController
             self.navigationController?.pushViewController(calculatorVC, animated: true)
 
         } else {
             let detailVC = mainStoryBoard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+            detailVC.content = selectedContent
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }

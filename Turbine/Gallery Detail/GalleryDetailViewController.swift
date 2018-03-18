@@ -15,8 +15,12 @@ class GalleryDetailViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet weak var imageViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageCaption: UILabel!
-    var image = UIImage()
-    var images = [UIImage]()
+    var imageSelected = [String:String]()
+    var imagesFromPrevious = [[String:String]]()
+    private var image = UIImage()
+    private var imagePath: String!
+    private var subtitle: String!
+    var imagesPath = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,31 +38,43 @@ class GalleryDetailViewController: UIViewController, UICollectionViewDataSource,
         let scaledHeight = imageHeight * ratio
         imageViewConstraint.constant = scaledHeight
     }
-    
+
     private func setImage() {
-        self.imageView.image = image
+        for image in imageSelected {
+            if image.key == "imagePath" {
+                self.imagePath = image.value
+            }
+            if image.key == "subtitle" {
+                self.subtitle = image.value
+            }
+        }
+        self.imageView.sd_setImage(with: URL(string: self.imagePath), completed: { [weak self] (image, error, cacheType, imageURL) in
+            self?.image = image!
+            self?.imageView.image = image
+        })
     }
     
     private func setTextLabel() {
-        self.imageCaption.text = "Fabian TC, Patton JH Jr. Croce MA, et al. Blunt Carotid arterial injuries: Importance of early diagnosis and anticoagulant therapy. An Surg 196; 23:513."
+        self.imageCaption.text = self.subtitle
         self.imageCaption.sizeToFit()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return self.imagesFromPrevious.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageGalleryDetailCollectionViewCell
-        let image = images[indexPath.row]
-        cell.imageView.image = image
+        let imageURL = self.imagesPath[indexPath.row]
+        cell.imageView.sd_setImage(with: URL(string: imageURL))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.image = images[indexPath.row]
+        self.imageSelected = imagesFromPrevious[indexPath.row]
         setImage()
         setImageViewHeight()
+        setTextLabel()
     }
     
 }
