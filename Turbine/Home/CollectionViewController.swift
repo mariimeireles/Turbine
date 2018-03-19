@@ -8,13 +8,14 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 private let reuseIdentifier = "Icon"
 
 class CollectionViewController: UICollectionViewController {
     
     private var customIconFlowLayout: CustomIconFlowLayout!
-    private var content = [Content]()
+    private var contents = [Content]()
     private var firebaseRef: DatabaseReference!
     
     override func viewDidLoad() {
@@ -22,21 +23,46 @@ class CollectionViewController: UICollectionViewController {
         setCustomNavigationBar()
         collectionViewLayout()
         self.firebaseRef = Database.database().reference().child("Content")
-        loadContent()
+//        loadContent()
+        fetchContent()
     }
     
-    private func loadContent() {
-        self.firebaseRef.observe(DataEventType.value, with: { (snapshot) in
-            var newContents = [Content]()
-            for contentSnapshot in snapshot.children {
-                let contentObject = Content(snapshot: contentSnapshot as! DataSnapshot)
-                newContents.append(contentObject)
+//    private func loadContent() {
+//        self.firebaseRef = Database.database().reference().child("Content")
+//        self.firebaseRef.database.isPersistenceEnabled = true
+//        self.firebaseRef.keepSynced(true)
+//        self.firebaseRef.observe(DataEventType.value, with: { (snapshot) in
+//            var newContents = [Content]()
+//            for contentSnapshot in snapshot.children {
+//                let contentObject = Content(snapshot: contentSnapshot as! DataSnapshot)
+//                newContents.append(contentObject)
+//            }
+//            self.contents = newContents
+//            DispatchQueue.main.async {
+//                self.collectionView!.reloadData()
+//            }
+//        })
+//    }
+    
+    func fetchContent() {
+//        self.firebaseRef = Database.database().reference().child("Content")
+//        Database.database().isPersistenceEnabled = true
+//        Database.database().reference().child("Content").observe(.childAdded, with: { (snapshot) in
+//        self.firebaseRef.keepSynced(true)
+        self.firebaseRef.observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let content = Content(dictionary: dictionary)
+//                let user = User(dictionary: dictionary)
+//                user.id = snapshot.key
+                self.contents.append(content)
+                self.firebaseRef.keepSynced(true)
+                DispatchQueue.main.async(execute: {
+                    self.collectionView!.reloadData()
+                })
+//                user.name = dictionary["name"]
             }
-            self.content = newContents
-            DispatchQueue.main.async {
-                self.collectionView!.reloadData()
-            }
-        })
+
+        }, withCancel: nil)
     }
     
     private func collectionViewLayout() {
@@ -62,16 +88,17 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.content.count
+        return self.contents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
-        let image = self.content[indexPath.row]
-        cell.imageView.sd_setImage(with: URL(string: image.iconImage1))
-        if cell.imageView.sd_imageURL() == nil {
-            print("DEU RUIM")
+        let content = self.contents[indexPath.row]
+        if let iconImage1 = content.iconImage1 {
+            cell.imageView.loadImageUsingCacheWithUrlString(iconImage1)
         }
+//        cell.imageView.sd_setImage(with: URL(string: content.iconImage1))
+
         return cell
     }
     
@@ -94,9 +121,9 @@ class CollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let selectedContent = content[indexPath.row]
+        let selectedContent = contents[indexPath.row]
         let isCalculator = selectedContent.calculator
-        if isCalculator {
+        if isCalculator! {
             let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorViewController
             calculatorVC.content = selectedContent
             self.navigationController?.pushViewController(calculatorVC, animated: true)

@@ -25,7 +25,7 @@ class CalculatorViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func setIconImage() {
         let imageName = self.content.iconImage2
-        imageView.sd_setImage(with: URL(string: imageName))
+        imageView.sd_setImage(with: URL(string: imageName!))
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.layer.masksToBounds = true
     }

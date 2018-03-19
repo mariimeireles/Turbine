@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     
     private func setIconImage() {
         let imageName = content.iconImage2
-        iconImage.sd_setImage(with: URL(string: imageName))
+        iconImage.sd_setImage(with: URL(string: imageName!))
         iconImage.layer.cornerRadius = iconImage.frame.size.width / 2
         iconImage.layer.masksToBounds = true
     }
@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setGalleryButton() {
-        if !content.haveGallery {
+        if !content.haveGallery! {
             galleryButton.alpha = 0
         }
     }

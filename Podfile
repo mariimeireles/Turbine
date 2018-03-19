@@ -8,6 +8,8 @@ target 'Turbine' do
   pod 'FirebaseDatabase'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'SDWebImage/WebP'
   
   # Pods for Turbine

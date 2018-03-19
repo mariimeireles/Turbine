@@ -11,13 +11,13 @@ import FirebaseDatabase
 
 struct Content {
     
-    let calculator: Bool
+    let calculator: Bool?
     var gallery: [[String:String]]?
-    var haveGallery: Bool
-    let iconImage1: String
-    let iconImage2: String
+    var haveGallery: Bool?
+    let iconImage1: String?
+    let iconImage2: String?
     let text: String?
-    let title: String
+    let title: String?
     let webSites: [String]?
     
     init(snapshot: DataSnapshot) {
@@ -64,6 +64,18 @@ struct Content {
         } else {
             self.webSites = nil
         }
+    }
+    
+    
+    init(dictionary: [String: AnyObject]) {
+        self.calculator = dictionary["calculator"] as? Bool
+        self.gallery = dictionary["gallery"] as? [[String:String]]
+        self.haveGallery = dictionary["haveGallery"] as? Bool
+        self.iconImage1 = dictionary["iconImage1"] as? String
+        self.iconImage2 = dictionary["iconImage2"] as? String
+        self.text = dictionary["text"] as? String
+        self.title = dictionary["title"] as? String
+        self.webSites = dictionary["webSites"] as? [String]
     }
     
 }
