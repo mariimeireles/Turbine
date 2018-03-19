@@ -97,7 +97,7 @@ class CollectionViewController: UICollectionViewController {
         let selectedContent = content[indexPath.row]
         let isCalculator = selectedContent.calculator
         if isCalculator {
-            let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorTableViewController
+            let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorViewController
             calculatorVC.content = selectedContent
             self.navigationController?.pushViewController(calculatorVC, animated: true)
 
