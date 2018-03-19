@@ -69,6 +69,9 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IconCollectionViewCell
         let image = self.content[indexPath.row]
         cell.imageView.sd_setImage(with: URL(string: image.iconImage1))
+        if cell.imageView.sd_imageURL() == nil {
+            print("DEU RUIM")
+        }
         return cell
     }
     
@@ -95,6 +98,7 @@ class CollectionViewController: UICollectionViewController {
         let isCalculator = selectedContent.calculator
         if isCalculator {
             let calculatorVC = mainStoryBoard.instantiateViewController(withIdentifier: "Calculator") as! CalculatorTableViewController
+            calculatorVC.content = selectedContent
             self.navigationController?.pushViewController(calculatorVC, animated: true)
 
         } else {
