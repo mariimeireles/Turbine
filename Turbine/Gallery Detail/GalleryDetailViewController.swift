@@ -16,11 +16,11 @@ class GalleryDetailViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageCaption: UILabel!
     var imageSelected = [String:String]()
-    var imagesFromPrevious = [[String:String]]()
+    var imagesFromGallery = [[String:String]]()
+    var imagesPath = [String]()
     private var image = UIImage()
     private var imagePath: String!
     private var subtitle: String!
-    var imagesPath = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +41,11 @@ class GalleryDetailViewController: UIViewController, UICollectionViewDataSource,
 
     private func setImage() {
         for image in imageSelected {
-            if image.key == "imagePath" {
-                self.imagePath = image.value
-            }
-            if image.key == "subtitle" {
-                self.subtitle = image.value
-            }
+            self.imagePath = image.key
+            self.subtitle = image.value
         }
-        self.imageView.sd_setImage(with: URL(string: self.imagePath), completed: { [weak self] (image, error, cacheType, imageURL) in
-            self?.image = image!
-            self?.imageView.image = image
-        })
+        self.image = UIImage(named: self.imagePath)!
+        self.imageView.image = self.image
     }
     
     private func setTextLabel() {
@@ -60,18 +54,18 @@ class GalleryDetailViewController: UIViewController, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imagesFromPrevious.count
+        return self.imagesFromGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageGalleryDetailCollectionViewCell
-        let imageURL = self.imagesPath[indexPath.row]
-        cell.imageView.sd_setImage(with: URL(string: imageURL))
+        let imageName = self.imagesPath[indexPath.row]
+        cell.imageView.image = UIImage(named: imageName)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.imageSelected = imagesFromPrevious[indexPath.row]
+        self.imageSelected = imagesFromGallery[indexPath.row]
         setImage()
         setImageViewHeight()
         setTextLabel()

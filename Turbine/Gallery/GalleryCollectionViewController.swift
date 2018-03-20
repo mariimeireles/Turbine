@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 private let reuseIdentifier = "Image"
 
@@ -30,7 +29,6 @@ class GalleryCollectionViewController: UICollectionViewController {
         DispatchQueue.main.async {
             self.collectionView!.reloadData()
         }
-        
     }
     
     private func loadImages() {
@@ -38,9 +36,7 @@ class GalleryCollectionViewController: UICollectionViewController {
         self.gallery = gallery!
         for item in gallery! {
             for image in item {
-                if image.key == "imagePath" {
-                    self.imagesPath.append(image.value)
-                }
+                self.imagesPath.append(image.key)
             }
         }
     }
@@ -51,8 +47,8 @@ class GalleryCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-        let imageURL = self.imagesPath[indexPath.row]
-        cell.imageView.sd_setImage(with: URL(string: imageURL))
+        let imageName = self.imagesPath[indexPath.row]
+        cell.imageView.image = UIImage(named: imageName)
         return cell
     }
     
@@ -74,9 +70,11 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let galleryDetailVC = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryDetail") as! GalleryDetailViewController
-        galleryDetailVC.imageSelected = gallery[indexPath.row]
-        galleryDetailVC.imagesFromPrevious = gallery
+        galleryDetailVC.imageSelected = content.gallery![indexPath.row]
+        galleryDetailVC.imagesFromGallery = gallery
+        print("Images From Previous \(gallery)")
         galleryDetailVC.imagesPath = imagesPath
+        print("Images Path \(imagesPath)")
         self.navigationController?.pushViewController(galleryDetailVC, animated: true)
     }
 
