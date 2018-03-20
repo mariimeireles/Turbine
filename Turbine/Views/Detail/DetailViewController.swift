@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var galleryButton: UIButton!
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setTextLabel() {
-        textLabel.text = content.text
+        textLabel.attributedText = content.text
         textLabel.sizeToFit()
     }
     
@@ -48,5 +48,6 @@ class DetailViewController: UIViewController {
             galleryVC.content = self.content
         }
     }
-
+    
 }
+
