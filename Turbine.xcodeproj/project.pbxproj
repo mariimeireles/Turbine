@@ -15,7 +15,6 @@
 		4962B5AC205C96D90002970B /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4962B5AB205C96D90002970B /* Content.swift */; };
 		496776A8205F4DF7005A71FD /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496776A7205F4DF7005A71FD /* CalculatorViewController.swift */; };
 		496776AA205F4E28005A71FD /* CalcullatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496776A9205F4E28005A71FD /* CalcullatorCell.swift */; };
-		496776AD20602098005A71FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496776AC20602098005A71FD /* Extensions.swift */; };
 		4997420920543EB1000BC171 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420820543EB1000BC171 /* GalleryCollectionViewController.swift */; };
 		4997420B20543F26000BC171 /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420A20543F26000BC171 /* CustomImageFlowLayout.swift */; };
 		4997420D205444A3000BC171 /* GalleryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997420C205444A3000BC171 /* GalleryHeaderView.swift */; };
@@ -60,7 +59,6 @@
 		4962B5AB205C96D90002970B /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		496776A7205F4DF7005A71FD /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		496776A9205F4E28005A71FD /* CalcullatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcullatorCell.swift; sourceTree = "<group>"; };
-		496776AC20602098005A71FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4997420820543EB1000BC171 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		4997420A20543F26000BC171 /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		4997420C205444A3000BC171 /* GalleryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryHeaderView.swift; sourceTree = "<group>"; };
@@ -126,6 +124,18 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		493CDBFD20611FDA006BAC25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4922F40B20545E7F000B37BC /* Gallery Detail */,
+				4997420720543E69000BC171 /* Gallery */,
+				49CB7E4F204C885100BBCD13 /* References */,
+				49BE6B36204367FA0027FD46 /* Detail */,
+				4D2AC137204099D000F5F330 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4962B5A4205C96270002970B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,14 +164,6 @@
 			);
 			name = Models;
 			path = Content;
-			sourceTree = "<group>";
-		};
-		496776AB20602086005A71FD /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				496776AC20602098005A71FD /* Extensions.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4997420720543E69000BC171 /* Gallery */ = {
@@ -195,16 +197,11 @@
 		49BE6AFA2038A7D10027FD46 /* Turbine */ = {
 			isa = PBXGroup;
 			children = (
-				496776AB20602086005A71FD /* Helpers */,
-				493CDBFA2060B47E006BAC25 /* View Models */,
 				4962B5A6205C96730002970B /* Models */,
+				493CDBFD20611FDA006BAC25 /* Views */,
+				493CDBFA2060B47E006BAC25 /* View Models */,
 				4962B5A5205C963C0002970B /* Supporting Files */,
 				4962B5A4205C96270002970B /* Resources */,
-				4922F40B20545E7F000B37BC /* Gallery Detail */,
-				4997420720543E69000BC171 /* Gallery */,
-				49CB7E4F204C885100BBCD13 /* References */,
-				49BE6B36204367FA0027FD46 /* Detail */,
-				4D2AC137204099D000F5F330 /* Home */,
 				49BE6AFF2038A7D10027FD46 /* Main.storyboard */,
 				49BE6B042038A7D10027FD46 /* LaunchScreen.storyboard */,
 			);
@@ -360,7 +357,6 @@
 				49CB7E51204C887D00BBCD13 /* ReferencesViewController.swift in Sources */,
 				49BE6B312039D9730027FD46 /* IconCollectionViewCell.swift in Sources */,
 				4997420B20543F26000BC171 /* CustomImageFlowLayout.swift in Sources */,
-				496776AD20602098005A71FD /* Extensions.swift in Sources */,
 				4D2AC13620405F6B00F5F330 /* CollectionViewController.swift in Sources */,
 				496776AA205F4E28005A71FD /* CalcullatorCell.swift in Sources */,
 				4997420F205444BE000BC171 /* GalleryeFooterView.swift in Sources */,

@@ -20,7 +20,6 @@ struct Content {
     var webSites: [String]?
     
     init(calculator: Bool, gallery: [[String:String]]?, haveGallery: Bool, iconImage1: String, iconImage2: String, text: String?, title: String, webSites: [String]?) {
-//        self.init()
         self.calculator = calculator
         self.gallery = gallery
         self.haveGallery = haveGallery
