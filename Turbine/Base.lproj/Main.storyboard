@@ -242,27 +242,20 @@
                                 <rect key="frame" x="-20" y="0.0" width="569" height="931"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-RW-VMP">
-                                        <rect key="frame" x="20" y="20" width="529" height="75"/>
+                                        <rect key="frame" x="20" y="20" width="529" height="0.0"/>
                                         <color key="backgroundColor" red="1" green="0.14117647058823529" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="Cff-SB-SJy"/>
+                                            <constraint firstAttribute="height" id="Cff-SB-SJy"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="20s-7W-sYk">
-                                        <rect key="frame" x="211" y="46" width="146" height="146"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="146" id="90r-uF-pji"/>
-                                            <constraint firstAttribute="width" constant="146" id="T2o-Hm-9i7"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oj-tA-eVE">
-                                        <rect key="frame" x="71" y="221" width="426" height="20"/>
+                                        <rect key="frame" x="71" y="57" width="426" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-Rf-e7t">
-                                        <rect key="frame" x="180" y="297" width="208" height="176"/>
+                                        <rect key="frame" x="180" y="133" width="208" height="176"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="208" id="1Si-IZ-Fum"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="176" id="U0x-wx-reb"/>
@@ -274,21 +267,19 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="20s-7W-sYk" firstAttribute="centerX" secondItem="rxg-TY-KIP" secondAttribute="centerX" id="0rd-5P-Vox"/>
                                     <constraint firstItem="0Za-Rf-e7t" firstAttribute="top" secondItem="7Oj-tA-eVE" secondAttribute="bottom" constant="56" id="5gI-Dc-K1W"/>
+                                    <constraint firstItem="XNk-RW-VMP" firstAttribute="centerX" secondItem="rxg-TY-KIP" secondAttribute="centerX" id="7ir-o0-oSE"/>
                                     <constraint firstAttribute="bottom" secondItem="0Za-Rf-e7t" secondAttribute="bottom" constant="50" id="BqQ-0n-FPG"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0Za-Rf-e7t" secondAttribute="trailing" constant="181" id="Bsq-um-vzO"/>
                                     <constraint firstItem="XNk-RW-VMP" firstAttribute="leading" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="20" id="DzG-WI-fqR"/>
                                     <constraint firstAttribute="trailing" secondItem="7Oj-tA-eVE" secondAttribute="trailing" constant="72" id="IRA-gv-l0b"/>
-                                    <constraint firstItem="20s-7W-sYk" firstAttribute="top" secondItem="rxg-TY-KIP" secondAttribute="top" constant="46" id="Lz9-Je-9zb"/>
                                     <constraint firstItem="XNk-RW-VMP" firstAttribute="top" secondItem="rxg-TY-KIP" secondAttribute="top" constant="20" id="Nlp-dn-o9W"/>
-                                    <constraint firstItem="7Oj-tA-eVE" firstAttribute="top" secondItem="20s-7W-sYk" secondAttribute="bottom" constant="29" id="ODy-eg-tNC"/>
                                     <constraint firstAttribute="trailing" secondItem="XNk-RW-VMP" secondAttribute="trailing" constant="20" id="S9b-uH-3Nr"/>
                                     <constraint firstItem="7Oj-tA-eVE" firstAttribute="centerX" secondItem="0Za-Rf-e7t" secondAttribute="centerX" id="YoA-7h-KJP"/>
-                                    <constraint firstItem="XNk-RW-VMP" firstAttribute="centerX" secondItem="20s-7W-sYk" secondAttribute="centerX" id="c8R-gl-MIL"/>
+                                    <constraint firstItem="7Oj-tA-eVE" firstAttribute="centerX" secondItem="XNk-RW-VMP" secondAttribute="centerX" id="Ysi-LV-hTl"/>
                                     <constraint firstItem="0Za-Rf-e7t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="180" id="lgY-aw-aif"/>
-                                    <constraint firstItem="20s-7W-sYk" firstAttribute="centerX" secondItem="7Oj-tA-eVE" secondAttribute="centerX" id="p3D-pn-icB"/>
                                     <constraint firstItem="7Oj-tA-eVE" firstAttribute="leading" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="71" id="pwR-ym-HzP"/>
+                                    <constraint firstItem="7Oj-tA-eVE" firstAttribute="top" secondItem="XNk-RW-VMP" secondAttribute="bottom" constant="37" id="tQl-NL-BGl"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -304,7 +295,6 @@
                     <size key="freeformSize" width="529" height="931"/>
                     <connections>
                         <outlet property="galleryButton" destination="0Za-Rf-e7t" id="lXD-hz-P7t"/>
-                        <outlet property="iconImage" destination="20s-7W-sYk" id="kVy-ZK-VFb"/>
                         <outlet property="textLabel" destination="7Oj-tA-eVE" id="svI-hI-HQa"/>
                     </connections>
                 </viewController>
