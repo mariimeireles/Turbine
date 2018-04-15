@@ -11,7 +11,6 @@ import SafariServices
 
 class CalculatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var content: Content!
 
@@ -20,14 +19,6 @@ class CalculatorViewController: UIViewController, UITableViewDelegate, UITableVi
         self.title = content.title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tableView.separatorStyle = .none
-        setIconImage()
-    }
-    
-    private func setIconImage() {
-        let imageName = self.content.iconImage2
-        imageView.image = UIImage(named: imageName)
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        imageView.layer.masksToBounds = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

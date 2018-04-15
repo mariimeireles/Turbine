@@ -157,22 +157,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyN-ei-7Ix">
-                                <rect key="frame" x="0.0" y="0.0" width="529" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="529" height="0.0"/>
                                 <color key="backgroundColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="3h8-bB-zKn"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="C1x-6b-Ryc"/>
+                                    <constraint firstAttribute="height" id="3h8-bB-zKn"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQe-4K-Rp2">
-                                <rect key="frame" x="191" y="46" width="146" height="146"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="Pih-d8-Gns"/>
-                                    <constraint firstAttribute="height" constant="146" id="b9c-hz-a6f"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Me3-Tm-Qby">
-                                <rect key="frame" x="0.0" y="200" width="529" height="731"/>
+                                <rect key="frame" x="0.0" y="37" width="529" height="894"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Calculator" id="L7n-g0-sOg" userLabel="Calculator" customClass="CalcullatorCell" customModule="Turbine" customModuleProvider="target">
@@ -208,13 +200,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Me3-Tm-Qby" firstAttribute="top" secondItem="eyN-ei-7Ix" secondAttribute="bottom" constant="37" id="0ST-VH-5id"/>
                             <constraint firstItem="eyN-ei-7Ix" firstAttribute="top" secondItem="jdU-z6-bdH" secondAttribute="top" id="4Rc-gz-knc"/>
                             <constraint firstItem="Me3-Tm-Qby" firstAttribute="trailing" secondItem="93b-q1-glB" secondAttribute="trailing" id="65j-rc-3xB"/>
                             <constraint firstItem="93b-q1-glB" firstAttribute="bottom" secondItem="Me3-Tm-Qby" secondAttribute="bottom" id="9ao-Pg-49v"/>
                             <constraint firstItem="eyN-ei-7Ix" firstAttribute="leading" secondItem="93b-q1-glB" secondAttribute="leading" id="ExP-ca-o1A"/>
-                            <constraint firstItem="YQe-4K-Rp2" firstAttribute="top" secondItem="93b-q1-glB" secondAttribute="top" constant="26" id="FdF-Yf-nHb"/>
-                            <constraint firstItem="Me3-Tm-Qby" firstAttribute="top" secondItem="YQe-4K-Rp2" secondAttribute="bottom" constant="8" id="H77-5Q-yiy"/>
-                            <constraint firstItem="YQe-4K-Rp2" firstAttribute="centerX" secondItem="93b-q1-glB" secondAttribute="centerX" id="Hvs-0S-DtG"/>
                             <constraint firstItem="Me3-Tm-Qby" firstAttribute="leading" secondItem="93b-q1-glB" secondAttribute="leading" id="cNh-Oe-1BD"/>
                             <constraint firstItem="eyN-ei-7Ix" firstAttribute="trailing" secondItem="93b-q1-glB" secondAttribute="trailing" id="q3w-Ph-t7u"/>
                         </constraints>
@@ -222,7 +212,6 @@
                     </view>
                     <size key="freeformSize" width="529" height="931"/>
                     <connections>
-                        <outlet property="imageView" destination="YQe-4K-Rp2" id="e0e-GA-IEH"/>
                         <outlet property="tableView" destination="Me3-Tm-Qby" id="1hc-k0-jNl"/>
                     </connections>
                 </viewController>
