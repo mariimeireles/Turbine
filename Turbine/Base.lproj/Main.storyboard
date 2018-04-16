@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-TY-KIP">
-                                <rect key="frame" x="-20" y="0.0" width="569" height="931"/>
+                                <rect key="frame" x="-20" y="0.0" width="569" height="771"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-RW-VMP">
                                         <rect key="frame" x="20" y="20" width="529" height="0.0"/>
@@ -237,53 +237,52 @@
                                             <constraint firstAttribute="height" id="Cff-SB-SJy"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oj-tA-eVE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oj-tA-eVE">
                                         <rect key="frame" x="71" y="57" width="426" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-Rf-e7t">
-                                        <rect key="frame" x="180" y="133" width="208" height="176"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="208" id="1Si-IZ-Fum"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="176" id="U0x-wx-reb"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" backgroundImage="galleryIcon"/>
-                                        <connections>
-                                            <segue destination="YSv-Ri-Bg8" kind="show" identifier="GallerySegue" id="284-gJ-hcW"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0Za-Rf-e7t" firstAttribute="top" secondItem="7Oj-tA-eVE" secondAttribute="bottom" constant="56" id="5gI-Dc-K1W"/>
                                     <constraint firstItem="XNk-RW-VMP" firstAttribute="centerX" secondItem="rxg-TY-KIP" secondAttribute="centerX" id="7ir-o0-oSE"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Za-Rf-e7t" secondAttribute="bottom" constant="50" id="BqQ-0n-FPG"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0Za-Rf-e7t" secondAttribute="trailing" constant="181" id="Bsq-um-vzO"/>
                                     <constraint firstItem="XNk-RW-VMP" firstAttribute="leading" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="20" id="DzG-WI-fqR"/>
                                     <constraint firstAttribute="trailing" secondItem="7Oj-tA-eVE" secondAttribute="trailing" constant="72" id="IRA-gv-l0b"/>
                                     <constraint firstItem="XNk-RW-VMP" firstAttribute="top" secondItem="rxg-TY-KIP" secondAttribute="top" constant="20" id="Nlp-dn-o9W"/>
                                     <constraint firstAttribute="trailing" secondItem="XNk-RW-VMP" secondAttribute="trailing" constant="20" id="S9b-uH-3Nr"/>
-                                    <constraint firstItem="7Oj-tA-eVE" firstAttribute="centerX" secondItem="0Za-Rf-e7t" secondAttribute="centerX" id="YoA-7h-KJP"/>
                                     <constraint firstItem="7Oj-tA-eVE" firstAttribute="centerX" secondItem="XNk-RW-VMP" secondAttribute="centerX" id="Ysi-LV-hTl"/>
-                                    <constraint firstItem="0Za-Rf-e7t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="180" id="lgY-aw-aif"/>
                                     <constraint firstItem="7Oj-tA-eVE" firstAttribute="leading" secondItem="rxg-TY-KIP" secondAttribute="leading" constant="71" id="pwR-ym-HzP"/>
                                     <constraint firstItem="7Oj-tA-eVE" firstAttribute="top" secondItem="XNk-RW-VMP" secondAttribute="bottom" constant="37" id="tQl-NL-BGl"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Oj-tA-eVE" secondAttribute="bottom" constant="56" id="ztf-c3-v8f"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-Rf-e7t">
+                                <rect key="frame" x="212" y="801" width="105" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="1Si-IZ-Fum"/>
+                                    <constraint firstAttribute="height" constant="102" id="U0x-wx-reb"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="galleryIcon"/>
+                                <connections>
+                                    <segue destination="YSv-Ri-Bg8" kind="show" identifier="GallerySegue" id="284-gJ-hcW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0Za-Rf-e7t" firstAttribute="top" secondItem="rxg-TY-KIP" secondAttribute="bottom" constant="30" id="FFk-d4-DqI"/>
                             <constraint firstItem="rxg-TY-KIP" firstAttribute="top" secondItem="Pp9-hX-Nph" secondAttribute="topMargin" constant="-20" id="Fy0-be-2jt"/>
                             <constraint firstItem="rxg-TY-KIP" firstAttribute="centerX" secondItem="Pp9-hX-Nph" secondAttribute="centerX" id="HFz-Tf-ayA"/>
                             <constraint firstItem="rxg-TY-KIP" firstAttribute="leading" secondItem="Pp9-hX-Nph" secondAttribute="leadingMargin" constant="-40" id="d8h-jr-KL7"/>
-                            <constraint firstItem="rxg-TY-KIP" firstAttribute="bottom" secondItem="yud-26-Fnt" secondAttribute="bottom" id="nVO-cm-M7C"/>
+                            <constraint firstItem="0Za-Rf-e7t" firstAttribute="centerX" secondItem="yud-26-Fnt" secondAttribute="centerX" id="enN-NQ-0WN"/>
+                            <constraint firstItem="yud-26-Fnt" firstAttribute="bottom" secondItem="rxg-TY-KIP" secondAttribute="bottom" constant="160" id="f7d-TF-evu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yud-26-Fnt"/>
                     </view>
                     <size key="freeformSize" width="529" height="931"/>
                     <connections>
                         <outlet property="galleryButton" destination="0Za-Rf-e7t" id="lXD-hz-P7t"/>
+                        <outlet property="scrollView" destination="rxg-TY-KIP" id="7H7-pw-7qz"/>
                         <outlet property="textLabel" destination="7Oj-tA-eVE" id="svI-hI-HQa"/>
                     </connections>
                 </viewController>

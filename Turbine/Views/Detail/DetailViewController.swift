@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var galleryButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     var content: Content!
     
     override func viewDidLoad() {
@@ -30,6 +31,8 @@ class DetailViewController: UIViewController {
     private func setGalleryButton() {
         if !content.haveGallery! {
             galleryButton.alpha = 0
+            let margins = view.layoutMarginsGuide
+            scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
         }
     }
     

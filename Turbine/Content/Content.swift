@@ -14,17 +14,15 @@ struct Content {
     var gallery: [[String:String]]?
     var haveGallery: Bool?
     var iconImage1: String
-    var iconImage2: String
     var text: NSMutableAttributedString?
     var title: String
     var webSites: [String]?
     
-    init(calculator: Bool, gallery: [[String:String]]?, haveGallery: Bool, iconImage1: String, iconImage2: String, text: NSMutableAttributedString?, title: String, webSites: [String]?) {
+    init(calculator: Bool, gallery: [[String:String]]?, haveGallery: Bool, iconImage1: String, text: NSMutableAttributedString?, title: String, webSites: [String]?) {
         self.calculator = calculator
         self.gallery = gallery
         self.haveGallery = haveGallery
         self.iconImage1 = iconImage1
-        self.iconImage2 = iconImage2
         self.text = text
         self.title = title
         self.webSites = webSites
